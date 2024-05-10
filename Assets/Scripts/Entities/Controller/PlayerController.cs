@@ -3,6 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : EntityController
 {
+    private Camera _mainCamera;
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
     public void OnMove(InputValue value)
     {
         Vector2 direction = value.Get<Vector2>();
@@ -14,7 +19,12 @@ public class PlayerController : EntityController
 
     public void OnLook(InputValue value)
     {
-        Debug.Log("플레이어 마우스 움직임");
+        Vector2 mousePos = value.Get<Vector2>();
+        if (mousePos != null)
+        {
+            Vector2 direction = _mainCamera.ScreenToWorldPoint(mousePos) - transform.position;
+            CallLookEvent(direction);
+        }
     }
 
     public void OnAttack()
