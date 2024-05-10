@@ -16,10 +16,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_direction.magnitude > 0)
-        {
-            _rigid.velocity = _direction * _speed;
-        }
+        _rigid.velocity = _direction * _speed;
     }
 
     private void Move(Vector2 direction)
