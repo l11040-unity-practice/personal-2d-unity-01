@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AnimeController : MonoBehaviour
 {
+    private static readonly int isWalk = Animator.StringToHash("isWalk");
     private EntityController _controller;
     private Animator _animator;
 
@@ -14,6 +15,6 @@ public class AnimeController : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-        _animator.SetBool("isWalk", direction.magnitude > 0);
+        _animator.SetBool(isWalk, direction.magnitude > 0);
     }
 }
