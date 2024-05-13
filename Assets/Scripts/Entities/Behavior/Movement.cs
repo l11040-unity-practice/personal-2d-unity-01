@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rigid;
     private Vector2 _direction = Vector2.zero;
     // TODO : 추후 스텟으로 변경해야함
-    private float _speed = 10;
+    private float _speed = 5;
     private void Awake()
     {
         _controller = GetComponent<EntityController>();
