@@ -10,6 +10,6 @@ public enum StatsChangeType
 public class CharacterStat : MonoBehaviour
 {
     public StatsChangeType StatsChangeType;
-    [Range(1, 100)] public int maxHealth;
-    [Range(1f, 20f)] public float speed;
+    [Range(1, 100)] public int MaxHealth;
+    [Range(1f, 20f)] public float Speed;
 }
