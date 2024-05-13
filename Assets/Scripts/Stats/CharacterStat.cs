@@ -7,7 +7,7 @@ public enum StatsChangeType
 }
 
 [System.Serializable]
-public class CharacterStat : MonoBehaviour
+public class CharacterStat
 {
     public StatsChangeType StatsChangeType;
     [Range(1, 100)] public int MaxHealth;
