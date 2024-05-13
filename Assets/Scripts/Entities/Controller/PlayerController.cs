@@ -27,8 +27,8 @@ public class PlayerController : EntityController
         }
     }
 
-    public void OnAttack()
+    public void OnAttack(InputValue value)
     {
-        Debug.Log("플레이어 공격");
+        CallAttackEvent();
     }
 }
