@@ -1,25 +1,33 @@
+using System;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField] protected AttackSO AttackData;
-    protected EntityController _controller;
+    [SerializeField] public AttackSO AttackData;
+    [HideInInspector] public event Action InitEvent;
+    [HideInInspector] public EntityController EntityController;
     protected SpriteRenderer _weaponRenderer;
     protected Vector2 _direction;
 
     protected virtual void Awake()
     {
         _weaponRenderer = GetComponentInChildren<SpriteRenderer>();
+        InitEvent += SubMethod;
     }
 
-    public void InitWeapon(EntityController controller)
+    private void SubMethod()
     {
-        _controller = controller;
-        if (_controller)
+        if (EntityController)
         {
-            _controller.OnAttackEvent += Attack;
-            _controller.OnLookEvent += Look;
+            EntityController.OnAttackEvent += Attack;
+            EntityController.OnLookEvent += Look;
         }
+    }
+
+    public void Init(EntityController controller)
+    {
+        EntityController = controller;
+        InitEvent?.Invoke();
     }
 
     protected virtual void Look(Vector2 direction)
@@ -31,6 +39,6 @@ public class WeaponController : MonoBehaviour
 
     protected virtual void Attack()
     {
+        _weaponRenderer.flipY = false;
     }
-
 }
