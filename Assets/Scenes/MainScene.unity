@@ -246,7 +246,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &20165876
 Animator:
@@ -354,7 +354,7 @@ MonoBehaviour:
   BaseStat:
     StatsChangeType: 2
     MaxHealth: 100
-    Speed: 5
+    Speed: 6
   Stats: []
 --- !u!114 &20165881
 MonoBehaviour:
