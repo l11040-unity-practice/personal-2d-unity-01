@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1403914880468293168}
   - component: {fileID: 439587776198467604}
   - component: {fileID: 1202068658888432653}
+  - component: {fileID: 4670738206379793129}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackData: {fileID: 11400000, guid: d022e8fd412d7bc4d8b6556e99ad0c69, type: 2}
+  EntityController: {fileID: 0}
 --- !u!95 &1202068658888432653
 Animator:
   serializedVersion: 5
@@ -68,6 +70,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4670738206379793129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191605974177567588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebe225f2016fb9459e6e89ffe04677e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1294138731223262025
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +175,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294138731223262025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
